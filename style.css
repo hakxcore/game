@@ -74,7 +74,7 @@ p {
   -webkit-filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowing-button-85 20s linear infinite;
+  animation: glowing-refer-btn 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
