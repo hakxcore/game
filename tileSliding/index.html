@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tile Sliding Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="title">
+    <div class="logo"></div>
+    <div class="name">Sliding Tile</div>
+  </div>
+  <div class="selector">
+    <div onclick="setSize(3)" data-selected="true">3&times;3</div>
+    <div onclick="setSize(4)">4&times;4</div>
+    <div onclick="setSize(5)">5&times;5</div>
+  </div>
+  <div class="puzzle"></div>
+  <div class="score">0</div>
+</div>
+
+
+
+
+
+
+<!-- SHORTHANDS -->
+<script>
+const doc = document ;
+const qs  = q => doc.querySelector(q);
+const qsa = q => doc.querySelectorAll(q);
+const ce  = q => doc.createElement(q);
+function addEventHooks(o){
+  o.on = (...p) => o.addEventListener(...p);
+  o.off = (...p) => o.removeEventListener(...p);
+}
+</script>
+</body>
+</html>

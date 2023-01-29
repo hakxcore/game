@@ -1,0 +1,158 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
+
+* {
+    box-sizing: border-box ;
+    margin : 0 ;
+    padding: 0 ;
+}
+
+html {
+    font-family: "Nunito",sans-serif ;
+}
+
+.wrapper {
+    position:absolute;
+    inset:0px;
+    background-color:hsl(160,50%,50%);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.title {
+    display:flex;
+    align-items:center;
+    margin-bottom:3rem;
+}
+
+.title .name {
+    color:#fff;
+    font-size:1.5rem;
+    text-transform:uppercase;
+    margin-left:2rem;
+    height:3rem;
+    display:flex;
+    align-items:center;
+}
+
+.title .logo {
+    position:relative;
+    width :1rem;
+    height:1rem;
+    border-radius:4px 0 0 0;
+    transform:;
+    background-color:#fff;
+    top:-0.66rem;
+}
+
+.title .logo::before {
+    content:"";
+    position:absolute;
+    width :1.33rem;
+    height:1.33rem;
+    top:100%;
+    background-color:inherit;
+    border-radius:0 0 4px 4px;
+}
+
+.title .logo::after {
+    content:"";
+    position:absolute;
+    width :1.33rem;
+    height:1.33rem;
+    left:100%;
+    background-color:inherit;
+    border-radius:0 4px 4px 0;
+}
+
+.selector {
+    position:relative;
+    --i:0;
+    display:flex;
+    padding:0.5rem;
+    border-radius:8px;
+    background-color:hsl(160,50%,70%);
+    margin-bottom:0.5rem;
+}
+
+.selector > div {
+    position:relative;
+    width :4rem;
+    height:2.5rem;
+    text-align:center;
+    color:hsl(160,50%,40%);
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1;
+    transition:all 200ms ease-out;
+}
+
+.selector > div[data-selected="true"]{
+    color:hsl(160,50%,30%);
+}
+
+.selector > *+* {
+    margin-left:0.5rem;
+}
+
+.selector::before {
+    content:"";
+    position:absolute;
+    width:4rem;
+    height:2.5rem;
+    top :0.5rem;
+    border-radius:4px;
+    background-color:#fff;
+    transform:translateX(calc(var(--i) * 4.5rem));
+    transition:all 200ms ease-out;
+}
+
+.score {
+    text-align:center;
+    color:#fff;
+    font-size:1.5rem;
+    font-weight:900;
+    margin-top:1rem;
+}
+
+.puzzle {
+    --r:3;
+    --s:calc((100vmin - 2rem) / var(--r));
+    width :calc(var(--s) * var(--r));
+    height:calc(var(--s) * var(--r));
+}
+
+.puzzle > div {
+    --i:1;
+    --j:1;
+    position:absolute;
+    width :var(--s);
+    height:var(--s);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all 200ms ease-out;
+    background-color:#fff;
+    font-weight:900;
+    font-size:2rem;
+    color:hsl(160,50%,30%);
+    transform:translate(
+        calc(var(--i) * var(--s)),
+        calc(var(--j) * var(--s))
+    ) scale(0.9);
+    border-radius:0.5rem ;
+}
+
+[data-anime="true"] {
+    pointer-events:none;
+}
+
+[data-anime="true"] .puzzle > div {
+    color:transparent;
+}
+
